@@ -25,13 +25,17 @@ LABEL qinglong_version="${QL_VERSION}"
 RUN mkdir -p /ql/xdd
 
 COPY docker-entrypoint.sh /ql/docker/docker-entrypoint.sh
-COPY --from=builder /builder/xdd /ql/xdd/xdd
+COPY --from=builder /builder/xdd/xdd /ql/xdd/xdd
 
 # 初始化生成目录 && fix "permission denied: unknown"
 RUN set -eux; \
-    mkdir -p /ql/xdd/xdd/conf \
+    mkdir -p /ql/xdd/conf \
     && chmod 777 /ql/xdd/xdd \
     && chmod +x /ql/docker/docker-entrypoint.sh
+
+# fix /ql/shell/share.sh: line 311: /ql/log/task_error.log: No such file or directory
+RUN mkdir -p /ql/log \
+    && echo "" > /ql/log/task_error.log
 
 EXPOSE 5701
 VOLUME /ql/xdd/conf
