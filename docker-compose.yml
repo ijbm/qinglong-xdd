@@ -1,12 +1,12 @@
 version: "3"
 services:
   qinglong-xdd:
-    image: gcdd1993//qinglong-xdd:latest
+    image: gcdd1993/qinglong-xdd:latest
     container_name: qinglong-xdd
     restart: unless-stopped
     tty: true
     ports:
-      - 5700:5700
+      - 5799:5700
     environment:
       - ENABLE_HANGUP=true
       - ENABLE_WEB_PANEL=true
