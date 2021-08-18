@@ -6,7 +6,8 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - 5799:5700
+      - 5700:5700
+      - 8080:8080
     environment:
       - ENABLE_HANGUP=true
       - ENABLE_WEB_PANEL=true

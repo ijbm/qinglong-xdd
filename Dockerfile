@@ -37,7 +37,9 @@ RUN set -eux; \
 RUN mkdir -p /ql/log \
     && echo "" > /ql/log/task_error.log
 
-EXPOSE 5701
+EXPOSE 5701 ##青龙默认端口
+EXPOSE 8080 ##xdd默认端口
+
 VOLUME /ql/xdd/conf
 
 ENTRYPOINT ["./docker/docker-entrypoint.sh"]
