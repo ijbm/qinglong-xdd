@@ -21,7 +21,7 @@
 ```bash
 mkdir -p /data/qinglong-xdd
 cd /data/qinglong-xdd
-wget https://ghproxy.com/https://raw.githubusercontent.com/gcdd1993/qinglong-xdd/main/docker/docker-compose.yml
+wget https://ghproxy.com/https://raw.githubusercontent.com/gcdd1993/qinglong-xdd/master/docker/docker-compose.yml
 docker-compose up -d
 # 然后修改xddconf目录下的配置文件
 # app.conf #启动端口
